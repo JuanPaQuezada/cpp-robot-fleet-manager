@@ -16,7 +16,7 @@ This project is a console-based management system designed to register and opera
 * C++ (Standard Console Application)
 * Windows API (`<windows.h>` for console manipulation)
 
-## 🧠 Concepts Demonstrated
+## Concepts Demonstrated
 - Abstract Classes and Pure Virtual Functions (`= 0`).
 - Base Class Constructor Initialization.
 - Pointers, References, and Heap Memory Management.
