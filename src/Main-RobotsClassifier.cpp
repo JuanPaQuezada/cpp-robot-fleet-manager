@@ -130,6 +130,7 @@ int main(){
     int opc;
     NodoFlota* cabeza = nullptr;
     do{
+        system("cls");
         cout<<"1) Registrar\t2) Operar\t3) Salir\nQue opcion quieres: ";
         if(!(cin>>opc)){
             cin.clear();
