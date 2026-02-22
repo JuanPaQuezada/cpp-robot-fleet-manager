@@ -3,12 +3,41 @@
 #define FLOTAROBOTS_H
 
 #include <iostream>
-#include <conio.h>
-#include <windows.h>
 #include <string>
 
 using namespace std;
 
 struct Hardware{
-    
+    string NoSerie;
+    int battery;
 };
+
+class Robot{
+    protected:
+        Hardware har;
+    public:
+        Robot(string, int);
+        virtual void operar() = 0;
+        virtual  ~Robot(){}
+};
+
+class Dron: public Robot{
+    private:
+        float maxHeight;
+    public:
+        Dron(string,int,float);
+        void operar() override{
+            cout<<"Drone "<<har.NoSerie<<" can reach an altitude of  "<<maxHeight<<" meters with "<<har.battery<<"% battery left";
+        }
+};
+class IndustrialRobot: public Robot{
+    private:
+        float maxLoad;
+    public:
+        IndustrialRobot(string,int,float);
+        void operar() override{
+            cout<<"Arm "<<har.NoSerie<<" is assembling parts bearing "<<maxLoad<<"kg with "<<har.battery<<" battery";
+        }
+};
+
+#endif
