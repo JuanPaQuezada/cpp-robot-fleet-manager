@@ -39,5 +39,12 @@ class IndustrialRobot: public Robot{
             cout<<"Arm "<<har.NoSerie<<" is assembling parts bearing "<<maxLoad<<"kg with "<<har.battery<<" battery";
         }
 };
+struct NodoFlota{
+    Robot* robot;
+    NodoFlota* siguiente;
+};
+void RegisterRobot(NodoFlota*& cabeza);
+void operateFleet(NodoFlota* cabeza);
+void releaseFleet(NodoFlota* cabeza);
 
 #endif
