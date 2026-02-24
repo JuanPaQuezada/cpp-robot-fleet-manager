@@ -12,6 +12,8 @@
 // ------------------------- Libraries -------------------------
 #include "../include/FlotaRobots.h"
 #include <cstdlib>
+#include <chrono>
+#include <thread>
 
 // ------------------------- Functions -------------------------
 
@@ -22,15 +24,19 @@ int main(){
     NodoFlota* cabeza=nullptr;
     int opc;
     do{
-        system("pause");
+        system("cls");
         cout<<"1) Registrar\t2) Operar\t3) Salir\nOpcion: ";
         if(!(cin>>opc)){cin.clear();cin.ignore(1000,'\n');}
+        system("cls");
         switch(opc){
             case 1: RegisterRobot(cabeza);break;
             case 2: operateFleet(cabeza);break;
             case 3:cout<<"saliendo..."<<endl;releaseFleet(cabeza);break;
             default: cout<<"Error: opcion no valida"<<endl;
         }
+        std::this_thread::sleep_for(std::chrono::milliseconds(3000));
     } while(opc!=3);
+
+    system("pause");
     return 0;
 }

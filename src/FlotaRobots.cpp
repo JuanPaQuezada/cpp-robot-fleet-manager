@@ -1,5 +1,7 @@
 #include "../include/FlotaRobots.h"
 #include <conio.h>
+#include <thread>
+#include <chrono>
 
 Robot::Robot(string s, int b){
     har.NoSerie=s;
