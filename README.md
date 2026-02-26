@@ -22,6 +22,15 @@ This project is a console-based management system designed to register and opera
 - Pointers, References, and Heap Memory Management.
 - Structs nested within Classes.
 
+## ⚙️ Software Architecture & C++ Features
+
+This project was built using modern C++ standards, focusing on memory safety and modular Object-Oriented Programming (OOP) principles:
+
+* **Modular Design:** Strict separation of interfaces (`.h` files), implementations (`.cpp` files), and control flow (`main.cpp`).
+* **Dynamic Memory Management:** Custom Linked List (`NodoFlota`) implementation to manage the fleet in the Heap. Includes a robust garbage collection routine (`releaseFleet`) to prevent memory leaks upon system shutdown.
+* **Polymorphism:** Virtual methods allow a single `operateFleet()` controller to dynamically resolve instructions for different hardware types (Drones vs. Industrial Robots) at runtime.
+* **Constructor Overloading:** Implemented flexible instantiation pathways. The system simulates real-world hardware registration by allowing both full-diagnostic initialization (custom battery/status) and "Quick Factory Registration" (assuming default 100% capacity parameters).
+
 ## Author
 **Juan Pablo Quezada** *B.Sc. in Intelligent Computing Engineering Universidad Autónoma de Aguascalientes (UAA)*
 
