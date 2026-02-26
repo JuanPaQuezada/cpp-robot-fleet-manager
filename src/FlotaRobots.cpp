@@ -41,10 +41,12 @@ void RegisterRobot(NodoFlota*& cabeza){
         }
         case 2: {
             cout<<"---REGISTER NEW INDUSTRIAL ROBOT---"<<endl;
+             cout<<"1) Nuevo de Fabrica\t2) Registrar Brazo\nTu brazo es: ";cin>>opcb;
             cout<<"Carga maxima: ";cin>>maxLoad;
             cin.ignore();
             cout<<"Numero de serie: ";getline(cin,noSerial);
-            cout<<"Nivel de bateria: ";cin>>battery;
+            if(opcb==2){cout<<"Nivel de bateria: ";cin>>battery;}
+            else cout<<"Bateria Registrada al 100%"<<endl;
             nuevoRobot=new IndustrialRobot(noSerial,battery,maxLoad);
             break;
         }
