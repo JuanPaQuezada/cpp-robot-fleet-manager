@@ -20,7 +20,7 @@ IndustrialRobot::IndustrialRobot(string s, int b, float ml):Robot(s,b){
 } 
 
 void RegisterRobot(NodoFlota*& cabeza){
-    int opc,battery;
+    int opc,opcb,battery;
     float maxHeight, maxLoad;
     string noSerial;
     Robot* nuevoRobot = nullptr;
@@ -30,10 +30,12 @@ void RegisterRobot(NodoFlota*& cabeza){
     switch(opc){
         case 1: {
             cout<<"---REGISTER NEW DRONE---"<<endl;
+            cout<<"1) Nuevo de Fabrica\t2) Registrar Dron\nTu Dron es: ";cin>>opcb;
             cout<<"Altura maxima: ";cin>>maxHeight;
             cin.ignore();
             cout<<"Numero de serie: ";getline(cin,noSerial);
-            cout<<"Nivel de bateria: ";cin>>battery;
+            if(opcb == 2) {cout<<"Nivel de bateria: ";cin>>battery;} 
+            else cout<<"Bateria Registrada al 100%"<<endl;
             nuevoRobot=new Dron(noSerial,battery,maxHeight);
             break;
         }
