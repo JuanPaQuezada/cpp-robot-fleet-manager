@@ -16,7 +16,10 @@ class Robot{
     protected:
         Hardware har;
     public:
+        //Constructor 1
         Robot(string, int);
+        //Constructor 2
+        Robot(string);
         virtual void operar() = 0;
         virtual  ~Robot(){}
 };

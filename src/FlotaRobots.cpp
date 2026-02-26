@@ -7,6 +7,11 @@ Robot::Robot(string s, int b){
     har.NoSerie=s;
     har.battery=b;
 }
+//Constructor 2(constructor overloading)
+Robot::Robot(string s){
+    har.NoSerie=s;
+    har.battery=100;
+}
 Dron::Dron(string s,int b, float mh):Robot(s,b){
     maxHeight=mh;
 }
